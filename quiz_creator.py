@@ -6,6 +6,6 @@ import random
 import json 
 
 # add class for the whole quiz creator
-class QuizCreator:
+class QuizCreatorScreen:
     def __init__(self):
-        
+        ...
