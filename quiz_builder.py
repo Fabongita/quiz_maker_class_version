@@ -17,3 +17,4 @@ class QuizBuilder():
         correct_answer=correct_label,
         options=options
     )
+        self.questions.append(quiz_question)
