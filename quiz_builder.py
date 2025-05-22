@@ -11,3 +11,9 @@ class QuizBuilder():
         random.shuffle(all_answers)
         options = dict(zip(option_label, all_answers))
         correct_label = next(label for label, answer in options.items() if answer == correct_answer)
+        quiz_question = QuizQuestion(
+        quiz_name=self.quiz_name,
+        question=question,
+        correct_answer=correct_label,
+        options=options
+    )
