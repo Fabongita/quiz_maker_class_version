@@ -9,4 +9,5 @@ class QuizBuilder():
         option_label = ["a", "b", "c", "d"]
         all_answers = [correct_answer] + wrong_answers
         random.shuffle(all_answers)
-
+        options = dict(zip(option_label, all_answers))
+        correct_label = next(label for label, answer in options.items() if answer == correct_answer)
