@@ -18,3 +18,4 @@ class QuizBuilder():
         options=options
     )
         self.questions.append(quiz_question)
+    
