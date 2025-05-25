@@ -18,6 +18,10 @@ class QuizBuilder():
         options=options
     )
         self.questions.append(quiz_question)
-
+    def to_dictionary(self):
+        return { 
+            "quiz name" : self.quiz_name,
+            "questions" : [question.turn_to_dict() for question in self.questions]
+        }
 
     
