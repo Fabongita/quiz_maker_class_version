@@ -3,6 +3,24 @@ from tkinter import simpledialog
 
 class QuizInputScreen:
     def __init__(self, png_pic = "quiz_maker_pic.png"):
-        picture = png_pic
+       self.picture = png_pic
     
     def ask_strings(self):
+       quiz_name = simpledialog.askstring("input name of the quiz", "Input the name of the quiz") #ask user to add quiz name
+       question = simpledialog.askstring("input question", "Think of a multiple choice question and input it here (enter nothing if you are done): ") # asks users to add there question, and add blank if they want to stop
+       if not question:
+           break
+       
+       correct_answer = simpledialog.askstring("Input correct answer", "input the correct answer: ") #ask user to input the correct answer
+       wrong_answers = []
+        #create a for loop that repeats the askstring function 3 times
+       for i in range(3):
+           simple_dialogue_answer = simpledialog.askstring("3 incorrect answers input ", f"Please input the wrong answer 3 times ({i+1} times inputted): ")
+           if simple_dialogue_answer is None: # checks if the answer is blank
+              simple_dialogue_answer = "" #converts the blank into space
+           wrong_answers.append(simple_dialogue_answer) #appends the answers into the wrong answer list
+
+       if len(wrong_answers) != 3: # checks if the wrong answers are not exactly 3
+           print("Please input exactly 3 answers")
+           return 
+       
