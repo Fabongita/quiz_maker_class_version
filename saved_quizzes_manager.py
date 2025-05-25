@@ -7,6 +7,7 @@ class SavedQuizzesManager:
 
     def add_questions_to_json(self, quiz_builder):
         with open(self.file_name, "r", encoding= "utf-8") as file:
-            contents = json.load(file)
-        contents.extend(quiz_builder.to_dict())
-        
+            quizzes = json.load(file)
+        quizzes.append(quiz_builder.to_dict())
+        with open(self.file_name, "w", encoding= "utf-8") as file:
+            json.dump(quizzes, file, indent=2)
