@@ -9,7 +9,7 @@ class QuizInputScreen:
        quiz_name = simpledialog.askstring("input name of the quiz", "Input the name of the quiz") #ask user to add quiz name
        question = simpledialog.askstring("input question", "Think of a multiple choice question and input it here (enter nothing if you are done): ") # asks users to add there question, and add blank if they want to stop
        if not question:
-          break
+           break
        self.quiz_builder = QuizBuilder(quiz_name)
        correct_answer = simpledialog.askstring("Input correct answer", "input the correct answer: ") #ask user to input the correct answer    
        wrong_answers = []
@@ -24,4 +24,7 @@ class QuizInputScreen:
            print("Please input exactly 3 answers")
            return 
        self.quiz_builder.add_question(correct_answer, wrong_answers, question)
+
+    def widgets(self):
+     ...
        
