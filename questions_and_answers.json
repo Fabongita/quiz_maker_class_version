@@ -1,0 +1,18 @@
+[
+  {
+    "quiz name": "science quiz",
+    "questions": [
+      {
+        "quiz name": "science quiz",
+        "question": "is science cool?",
+        "correct answer": "b",
+        "options": {
+          "a": "no",
+          "b": "yes",
+          "c": "no",
+          "d": "no"
+        }
+      }
+    ]
+  }
+]
