@@ -10,7 +10,6 @@ class QuizInputScreen:
     def ask_strings(self):
        quiz_name = simpledialog.askstring("input name of the quiz", "Input the name of the quiz") #ask user to add quiz name
        self.quiz_builder = QuizBuilder(quiz_name)
-       question = simpledialog.askstring("input question", "Think of a multiple choice question and input it here (enter nothing if you are done): ") # asks users to add there question, and add blank if they want to stop
        while True:
          question = simpledialog.askstring("input question", "Think of a multiple choice question and input it here (enter nothing if you are done): ") # asks users to add there question, and add blank if they want to stop
          if not question:
