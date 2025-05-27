@@ -1,4 +1,5 @@
 from quiz_builder import QuizBuilder
+from tkinter import *
 from tkinter import simpledialog
 
 class QuizInputScreen:
@@ -27,11 +28,11 @@ class QuizInputScreen:
             return 
          self.quiz_builder.add_question(correct_answer, wrong_answers, question)
 
-    def widgets(self):
+    def widgets(self, root):
       logo = PhotoImage(file= self.picture)
       logo_label = Label(root, image = logo)
       logo_label.pack(pady=10)
       # start button        
-      button = Button(root, text="Press if you want to start adding questions", command= ask_strings)
+      button = Button(root, text="Press if you want to start adding questions", command= self.ask_strings)
       button.pack(pady=40)
        
