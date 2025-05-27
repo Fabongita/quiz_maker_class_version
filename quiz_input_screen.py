@@ -1,6 +1,7 @@
 from quiz_builder import QuizBuilder
 from tkinter import *
 from tkinter import simpledialog
+from saved_quizzes_manager import SavedQuizzesManager
 
 class QuizInputScreen:
     def __init__(self, png_pic = "quiz_maker_pic.png", ):
@@ -27,6 +28,8 @@ class QuizInputScreen:
             print("Please input exactly 3 answers")
             return 
          self.quiz_builder.add_question(correct_answer, wrong_answers, question)
+       manager = SavedQuizzesManager()
+       manager.add_questions_to_json(self.quiz_builder)
 
     def widgets(self, root):
       logo = PhotoImage(file= self.picture)
