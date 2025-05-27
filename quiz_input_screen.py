@@ -32,8 +32,8 @@ class QuizInputScreen:
        manager.add_questions_to_json(self.quiz_builder)
 
     def widgets(self, root):
-      logo = PhotoImage(file= self.picture)
-      logo_label = Label(root, image = logo)
+      self.logo = PhotoImage(file= self.picture)
+      logo_label = Label(root, image = self.logo)
       logo_label.pack(pady=10)
       # start button        
       button = Button(root, text="Press if you want to start adding questions", command= self.ask_strings)
