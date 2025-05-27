@@ -11,6 +11,6 @@ class SavedQuizzesManager:
                 quizzes = json.load(file)
         except: 
             quizzes = []
-            quizzes.append(quiz_builder.to_dictionary())
+        quizzes.append(quiz_builder.to_dictionary())
         with open(self.file_name, "w", encoding= "utf-8") as file:
             json.dump(quizzes, file, indent=2)
