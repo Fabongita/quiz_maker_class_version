@@ -14,5 +14,32 @@
         }
       }
     ]
+  },
+  {
+    "quiz name": "math",
+    "questions": [
+      {
+        "quiz name": "math",
+        "question": "1+1 =?",
+        "correct answer": "b",
+        "options": {
+          "a": "4",
+          "b": "2",
+          "c": "1",
+          "d": "3"
+        }
+      },
+      {
+        "quiz name": "math",
+        "question": "2+2 =?",
+        "correct answer": "d",
+        "options": {
+          "a": "3",
+          "b": "2",
+          "c": "4",
+          "d": "1"
+        }
+      }
+    ]
   }
 ]
