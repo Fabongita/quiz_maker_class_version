@@ -7,7 +7,9 @@ class QuizInputScreen:
     def __init__(self, png_pic = "quiz_maker_pic.png", ):
        self.picture = png_pic
        self.quiz_builder = None
+       self.root = None
     def ask_strings(self):
+       self.root.withdraw()
        quiz_name = simpledialog.askstring("input name of the quiz", "Input the name of the quiz") #ask user to add quiz name
        self.quiz_builder = QuizBuilder(quiz_name)
        while True:
@@ -31,6 +33,7 @@ class QuizInputScreen:
        manager.add_questions_to_json(self.quiz_builder)
 
     def widgets(self, root):
+      self.root = root
       self.logo = PhotoImage(file= self.picture)
       logo_label = Label(root, image = self.logo)
       logo_label.pack(pady=10)
