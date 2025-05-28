@@ -1,13 +1,14 @@
+from quiz_screen import QuizScreen
 class ButtonLogic:
     def __init__(self, current_questions = [], current_index = 0, score = 0):
         self.current_questions = current_questions
         self.current_index = current_index
         self.score = score
-    def start(questions):
-        global current_questions, current_index, score
-        current_questions = questions
-        current_index = 0
-        score = 0
+    def start(self, questions):
+        global self.current_questions, self.current_index, self.score
+        self.current_questions = questions
+        self.current_index = 0
+        self.score = 0
         
         show_question() 
         

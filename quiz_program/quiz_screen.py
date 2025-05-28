@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import StringVar
 
-class WidgetsToBeUsed:
+class QuizScreen:
     def __init__(self):
         self.root = None
         self.intro_frame = None
