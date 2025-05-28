@@ -3,7 +3,9 @@ from quiz_maker_program import launch_quiz_maker
 import json
 
 class ButtonLogic:
-    def __init__(self, current_questions = [], current_index = 0, score = 0, ui):
+    def __init__(self, current_questions = None, current_index = 0, score = 0, ui):
+        if current_questions is None:
+            current_questions = []
         self.ui = ui
         self.current_questions = current_questions
         self.current_index = current_index
@@ -76,3 +78,18 @@ class ButtonLogic:
         for entry in self.ui.unique_name:
           self.ui.start_quiz_listbox.insert(self.ui.END, entry)
         self.ui.start_frame.tkraise()   
+    # method for the saved quizzes the quiz saved quizzes button is going to use
+    def saved_quizzes(self):
+         with open("questions_and_answers.JSON", "r", encoding= "utf-8" ) as file:
+            json_file = json.load(file)
+
+         # Get the unique quiz names
+         self.all_names = [entry["Quiz name"] for entry in json_file]
+         self.unique_name = list(set(self.all_names))
+
+         # Populate the Listbox with quiz names
+         self.ui.quiz_listbox.delete(0, self.ui.END)
+    
+         for entry in self.unique_name:
+             self.ui.quiz_listbox.insert(self.ui.END, entry)
+         self.ui.saved_quizzes_frame.tkraise()
