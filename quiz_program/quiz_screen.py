@@ -1,7 +1,16 @@
 from tkinter import *
 
 class WidgetsToBeUsed:
-    
+     def __init__(self):
+        self.root = None
+        self.intro_frame = None
+        self.start_frame = None
+        self.saved_quizzes_frame = None
+        self.play_frame = None
+        self.button_frame = None
+        self.radiobutton_widgets = {}
+        self.selected_answer = StringVar()
+
     # method for frame
     def frame(self, root):
         self.root = root
@@ -62,13 +71,35 @@ class WidgetsToBeUsed:
            self.radio_button.pack(fill="x", pady="2")
            self.radiobutton_widgets[option_letter] = self.radio_button
         
-    # method for listbox
-    def listbox(self):
+    # method for listbox when you press start
+    def start_listbox(self):
         self.start_quiz_listbox = Listbox(self.start_frame, font=("Courier", 12)) 
         self.start_quiz_listbox.pack(side=LEFT, fill=BOTH, expand=True, padx=20, pady=20)
+
+    #method for scrollbar when you pres start    
+    def start_scrollbar(self):
+        self.start_quiz_scrollbar = Scrollbar(self.start_frame, orient=VERTICAL, command=start_quiz_listbox.yview)
+        self.start_quiz_scrollbar.pack(side=RIGHT, fill=Y)
+
+    # method for combining the start scrollbar and listbox
+    def start_config(self):
+        self.start_quiz_listbox.config(yscrollcommand=start_scrollbar.set)
+        self.start_quiz_scrollbar.config(command=start_quiz_listbox.yview)
 
     #method for the scrollbar at the saved quizzes screen
     def saved_quiz_scrollbar(self):
         self.saved_quizzes_scrollbar = Scrollbar(self.saved_quizzes_frame, orient=VERTICAL, command=quiz_listbox.yview)
         self.saved_quizzes_scrollbar.pack(side=RIGHT, fill=Y)
+    
+    # method for the scrollbar at the start button screen
+    def saved_quiz_listbox(self):
+        self.saved_quizzes_listbox = Listbox(saved_quizzes_frame, font=("Courier", 12)) 
+        self.saved_quizzes_listbox.pack(side=LEFT, fill=BOTH, expand=True, padx=20, pady=20)
+    
+    # method for combining the saved quizzes scrollbar and listbox
+    def saved_quiz_config(self):
+        self.saved_quizzes_listbox.config(yscrollcommand=scrollbar.set)
+        self.saved_quizzes_scrollbar.config(command=quiz_listbox.yview)
+
+  
     
