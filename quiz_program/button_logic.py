@@ -1,4 +1,6 @@
 from quiz_screen import QuizScreen
+from quiz_maker_program import launch_quiz_maker
+
 class ButtonLogic:
     def __init__(self, current_questions = [], current_index = 0, score = 0, ui):
         self.ui = ui
@@ -48,4 +50,4 @@ class ButtonLogic:
     
     # method for creating a quiz when the button is pressed
     def create_quiz(self):
-         ...
+         launch_quiz_maker()

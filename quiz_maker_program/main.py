@@ -1,10 +1,19 @@
-from tkinter import *
-from quiz_input_screen import QuizInputScreen
-#Initialize the GUI.
-root = Tk()
-#Create an instance of QuizInputScreen.
-quiz_input_screen = QuizInputScreen()
-#Call its widgets() method to load up the interface.
-quiz_input_screen.widgets(root)
-#Run the tkinter main loop.
-root.mainloop()
+import tkinter as tk
+from .quiz_input_screen import QuizInputScreen
+from .saved_quizzes_manager import SavedQuizzesManager
+
+class MainScreen:
+    def __init__(self):
+        self.root = tk.Tk()
+        self.root.title("Quiz Maker")
+        self.root.geometry("800x600")
+        screen = QuizInputScreen()
+        screen.widgets(self.root)
+
+    def run(self):
+        self.root.mainloop()
+
+def launch_quiz_maker():
+    """Call this to pop up the quiz‐maker GUI."""
+    app = MainScreen()
+    app.run()
