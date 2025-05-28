@@ -11,7 +11,7 @@ class QuizScreen:
         self.button_frame = None
         self.radiobutton_widgets = {}
         self.selected_answer = StringVar()
-
+        self.quiz_questions = StringVar(value="")
     # method for frame
     def frame(self, root):
         self.root = root
