@@ -38,6 +38,11 @@ class ButtonLogic:
                 self.ui.main_menu_button.pack()
     
     #method for showing the current question and current options
-    def show(self):
-         pass
+    def show(self):     
+        self.question_data = self.current_questions[self.current_index]
+        self.ui.quiz_questions.set(self.question_data["Questions"])
+        self.ui.selected_answer.set("")
+        self.options = self.question_data["Options"]
+        for letter, widget in self.ui.radiobutton_widgets.items():
+            widget.config(text=f"{letter.upper()}: {self.options[letter]}")
 
