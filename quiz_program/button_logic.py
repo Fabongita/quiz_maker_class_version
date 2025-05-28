@@ -36,5 +36,8 @@ class ButtonLogic:
                     radiobutton.pack_forget()
                 self.ui.submit_button.pack_forget()
                 self.ui.main_menu_button.pack()
-
+    
+    #method for showing the current question and current options
+    def show(self):
+         pass
 
