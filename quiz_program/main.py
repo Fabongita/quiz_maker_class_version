@@ -35,8 +35,22 @@ def main():
     ui.back_button()
     ui.selection_button()
 
-
     # connect UI with logic
+    logic = ButtonLogic(ui=ui)
+
     # configure button commands
+    ui.start_button.config(command=logic.start_button_logic)
+    ui.quiz_creator_button.config(command=logic.create_quiz)
+    ui.saved_quizzes_button.config(command=logic.saved_quizzes)
+    ui.select_button.config(command=logic.load_button)
+    ui.submit_button.config(command=logic.submit)
+
     # raise intro frame
+    ui.intro_frame.tkraise()
+
     # start GUI event loop
+    root.mainloop()
+
+if __name__ == "__main__":
+    main()
+    
