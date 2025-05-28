@@ -23,6 +23,18 @@ class ButtonLogic:
 
     # method for when the submit button is pressed
     def submit(self):
-        
+        self.choice = self.ui.selected_answer.get()
+        self.correct = self.current_questions[self.current_index]["correct answer"]
+        if self.choice == self.correct:
+            self.score += 1
+        self.current_index += 1
+        if self.current_index < len(self.current_questions):
+                self.ui.show_question()
+        else:
+                self.ui.quiz_questions.set(f"Quiz complete! You scored {self.score} out of {len(self.current_questions)}.")
+                for radiobutton in self.ui.radiobutton_widgets.values():
+                    radiobutton.pack_forget()
+                self.ui.submit_button.pack_forget()
+                self.ui.main_menu_button.pack()
 
 
