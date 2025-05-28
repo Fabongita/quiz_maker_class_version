@@ -46,7 +46,7 @@ class QuizScreen:
 
     # method for submit button
     def submitter_button(self):
-        self.submit_button = Button(self.play_frame, text="Submit", command=self.submit)
+        self.submit_button = Button(self.play_frame, text="Submit", command=submit)
         self.submit_button.pack(pady=10)
 
     # method for back button
@@ -101,6 +101,10 @@ class QuizScreen:
     def saved_quiz_config(self):
         self.saved_quizzes_listbox.config(yscrollcommand=self.saved_quizzes_scrollbar.set)
         self.saved_quizzes_scrollbar.config(command=self.saved_quizzes_listbox.yview)
+    
+    #method for the label that displays the question
+    def question_label(self):
+     self.question_label_widget = Label(self.play_frame, textvariable=self.quiz_questions, font=("Courier", 16), wraplength=500, justify="left")
+     self.question_label_widget.pack(pady=20)
 
-  
     
