@@ -1,5 +1,6 @@
 from quiz_screen import QuizScreen
 from quiz_maker_program import launch_quiz_maker
+import json
 
 class ButtonLogic:
     def __init__(self, current_questions = [], current_index = 0, score = 0, ui):
