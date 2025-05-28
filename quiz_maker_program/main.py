@@ -1,10 +1,10 @@
-import tkinter as tk
+from tkinter import Toplevel
 from quiz_maker_program.quiz_input_screen import QuizInputScreen
 from quiz_maker_program.saved_quizzes_manager import SavedQuizzesManager
 
 class MainScreen:
     def __init__(self):
-        self.root = tk.Tk()
+        self.root = Toplevel()
         self.root.title("Quiz Maker")
         self.root.geometry("800x600")
         screen = QuizInputScreen()
