@@ -1,4 +1,4 @@
-from quiz_question import QuizQuestion
+from quiz_maker_program.quiz_question import QuizQuestion
 import json
 
 class SavedQuizzesManager:
