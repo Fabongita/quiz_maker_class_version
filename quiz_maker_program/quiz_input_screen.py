@@ -1,7 +1,7 @@
-from quiz_builder import QuizBuilder
+from .quiz_builder import QuizBuilder
 from tkinter import *
 from tkinter import simpledialog
-from saved_quizzes_manager import SavedQuizzesManager
+from .saved_quizzes_manager import SavedQuizzesManager
 
 class QuizInputScreen:
     def __init__(self, png_pic = "quiz_maker_pic.png", ):

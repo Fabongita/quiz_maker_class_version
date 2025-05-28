@@ -51,3 +51,7 @@ class ButtonLogic:
     # method for creating a quiz when the button is pressed
     def create_quiz(self):
          launch_quiz_maker()
+    
+    # method for loading the button
+    def load_button(self):
+         ...
