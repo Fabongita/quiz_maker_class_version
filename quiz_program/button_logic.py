@@ -5,6 +5,8 @@ class ButtonLogic:
         self.current_questions = current_questions
         self.current_index = current_index
         self.score = score
+    
+    # method for when the start button is pressed
     def start(self, questions):
         self.current_questions = questions
         self.current_index = 0
@@ -18,4 +20,9 @@ class ButtonLogic:
             widget.pack(fill="x", pady="2")
         self.ui.submit_button.pack(pady=10)
         self.ui.play_frame.tkraise()
+
+    # method for when the submit button is pressed
+    def submit(self):
+        
+
 
