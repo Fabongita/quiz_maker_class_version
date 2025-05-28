@@ -1,12 +1,5 @@
 from tkinter import *
 class WidgetsToBeUsed:
-    # constructor method
-    def __init__(self):
-        self.root = None
-        self.intro_frame = None
-        self.start_frame = None
-        self.play_frame = None
-        self.saved_quizzes_frame = None
     # method for frame
     def frame(self, root):
         self.root = root
@@ -17,16 +10,36 @@ class WidgetsToBeUsed:
 
     # method for saved quizzes button
     def saved_quizzes_button(self):
-        ...
+        ...               
 
     # method for start button
     def start_button(self):
         ...
 
+    # method for main menu button
+    def main_menu_button(self):
+        ...
+
     # method for create quiz button
     def create_quiz_button(self):
         ...
-        
+
+    # method for submit button
+    def submit_button(self):
+        ...
+
+    # method for back button
+    def back_button(self):
+        ...
+
     # method for radio buttons
     def radio_buttons(self):
+        ...
+    
+    # method for listbox
+    def listbox(self):
+        ...
+        
+    #method for scrollbar
+    def scrollbar(self):
         ...
