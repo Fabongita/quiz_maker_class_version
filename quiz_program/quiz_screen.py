@@ -89,7 +89,7 @@ class QuizScreen:
 
     #method for the scrollbar at the saved quizzes screen
     def saved_quiz_scrollbar(self):
-        self.saved_quizzes_scrollbar = Scrollbar(self.saved_quizzes_frame, orient=VERTICAL, command=self.quiz_listbox.yview)
+        self.saved_quizzes_scrollbar = Scrollbar(self.saved_quizzes_frame, orient=VERTICAL)
         self.saved_quizzes_scrollbar.pack(side=RIGHT, fill=Y)
     
     # method for the scrollbar at the start button screen
@@ -99,8 +99,8 @@ class QuizScreen:
     
     # method for combining the saved quizzes scrollbar and listbox
     def saved_quiz_config(self):
-        self.saved_quizzes_listbox.config(yscrollcommand=self.scrollbar.set)
-        self.saved_quizzes_scrollbar.config(command=self.quiz_listbox.yview)
+        self.saved_quizzes_listbox.config(yscrollcommand=self.saved_quizzes_scrollbar.set)
+        self.saved_quizzes_scrollbar.config(command=self.saved_quizzes_listbox.yview)
 
   
     
