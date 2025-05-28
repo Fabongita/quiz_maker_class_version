@@ -9,5 +9,16 @@
       "d": "i know"
     },
     "correct answer": "d"
+  },
+  {
+    "Quiz name": "math quiz",
+    "Questions": "1+1 = ?",
+    "Options": {
+      "a": "4",
+      "b": "1",
+      "c": "2",
+      "d": "3"
+    },
+    "correct answer": "c"
   }
 ]
