@@ -1,10 +1,11 @@
 import sys
 import os
 from tkinter import Tk
-from quiz_screen import QuizScreen
-from button_logic import ButtonLogic
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
+from quiz_screen import QuizScreen
+from button_logic import ButtonLogic
 
 #add main function that sets up and runs the quiz GUI app 
 def main():
