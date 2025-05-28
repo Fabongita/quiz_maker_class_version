@@ -1,6 +1,7 @@
 from quiz_screen import QuizScreen
 class ButtonLogic:
-    def __init__(self, current_questions = [], current_index = 0, score = 0):
+    def __init__(self, current_questions = [], current_index = 0, score = 0, ui):
+        self.ui = ui
         self.current_questions = current_questions
         self.current_index = current_index
         self.score = score
@@ -9,12 +10,12 @@ class ButtonLogic:
         self.current_index = 0
         self.score = 0
         
-        show_question() 
+        self.ui.show_questions()
         
-        self.main_menu_button.pack_forget()    
+        self.ui.main_menu_button.pack_forget()    
         
-        for widget in radiobutton_widgets.values():
+        for widget in self.ui.radiobutton_widgets.values():
             widget.pack(fill="x", pady="2")
-        submit_button.pack(pady=10)
-        play_frame.tkraise()
+        self.ui.submit_button.pack(pady=10)
+        self.ui.play_frame.tkraise()
 
