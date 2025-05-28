@@ -54,4 +54,13 @@ class ButtonLogic:
     
     # method for loading the button
     def load_button(self):
-         ...
+         self.selected = self.ui.start_quiz_listbox.curselection()
+         if not self.selected:
+          return  #returns nothing if nothing is selected
+         else:
+          self.index = self.selected[0] 
+         self.quiz_name = self.ui.start_quiz_listbox.get(self.index)
+         with open("questions_and_answers.JSON", "r", encoding= "utf-8" ) as file:
+          contents = json.load(file)
+          questions_to_play = [question for question in contents if question["Quiz name"] == self.quiz_name]
+         self.ui.start(questions_to_play)  
