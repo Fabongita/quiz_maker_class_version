@@ -1,11 +1,13 @@
-from .quiz_builder import QuizBuilder
+from quiz_builder import QuizBuilder
 from tkinter import *
 from tkinter import simpledialog
-from .saved_quizzes_manager import SavedQuizzesManager
-
+from saved_quizzes_manager import SavedQuizzesManager
+import os
 class QuizInputScreen:
     def __init__(self, png_pic = "quiz_maker_pic.png", ):
-       self.picture = png_pic
+       base_path = os.path.dirname(os.path.abspath(__file__))
+        # Join base path with the image filename to get full path
+       self.picture = os.path.join(base_path, png_pic)
        self.quiz_builder = None
        self.root = None
     def ask_strings(self):
@@ -31,6 +33,8 @@ class QuizInputScreen:
          self.quiz_builder.add_question(correct_answer, wrong_answers, question)
        manager = SavedQuizzesManager()
        manager.add_questions_to_json(self.quiz_builder)
+       self.root.deiconify()
+
 
     def widgets(self, root):
       self.root = root
