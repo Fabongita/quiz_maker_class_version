@@ -1,7 +1,8 @@
 from tkinter import *
+from tkinter import StringVar
 
 class WidgetsToBeUsed:
-     def __init__(self):
+    def __init__(self):
         self.root = None
         self.intro_frame = None
         self.start_frame = None
@@ -45,17 +46,17 @@ class WidgetsToBeUsed:
 
     # method for submit button
     def submitter_button(self):
-        self.submit_button = Button(self.play_frame, text="Submit", command=submit)
+        self.submit_button = Button(self.play_frame, text="Submit", command=self.submit)
         self.submit_button.pack(pady=10)
 
     # method for back button
     def back_button(self):
-        self.Back_button_saved_quizzes = Button(self.saved_quizzes_frame, text="Back", command=lambda: intro_frame.tkraise())
+        self.Back_button_saved_quizzes = Button(self.saved_quizzes_frame, text="Back", command=lambda: self.intro_frame.tkraise())
         self.Back_button_saved_quizzes.pack(padx="20", pady="20", side="right")
     
     #method for the selection button
     def selection_button(self):
-        self.select_button = Button(self.start_frame, text="Print Selected", command=load_button)
+        self.select_button = Button(self.start_frame, text="Print Selected", command=self.load_button)
         self.select_button.pack()
 
     # method for radio buttons
@@ -66,7 +67,7 @@ class WidgetsToBeUsed:
         self.options_frame.pack(anchor="w", padx=20, pady=10)
         for option_letter in ("a", "b", "c", "d"):
            self.radio_button = Radiobutton(self.options_frame, text=f"\u2022 {option_letter.upper()}",
-            variable=selected_answer, value=option_letter, indicatoron=True, font=("Courier", 14),
+            variable=self.selected_answer, value=option_letter, indicatoron=True, font=("Courier", 14),
             anchor="w", padx=10)
            self.radio_button.pack(fill="x", pady="2")
            self.radiobutton_widgets[option_letter] = self.radio_button
@@ -78,28 +79,28 @@ class WidgetsToBeUsed:
 
     #method for scrollbar when you pres start    
     def start_scrollbar(self):
-        self.start_quiz_scrollbar = Scrollbar(self.start_frame, orient=VERTICAL, command=start_quiz_listbox.yview)
+        self.start_quiz_scrollbar = Scrollbar(self.start_frame, orient=VERTICAL, command=self.start_quiz_listbox.yview)
         self.start_quiz_scrollbar.pack(side=RIGHT, fill=Y)
 
     # method for combining the start scrollbar and listbox
     def start_config(self):
-        self.start_quiz_listbox.config(yscrollcommand=start_scrollbar.set)
-        self.start_quiz_scrollbar.config(command=start_quiz_listbox.yview)
+        self.start_quiz_listbox.config(yscrollcommand=self.start_scrollbar.set)
+        self.start_quiz_scrollbar.config(command=self.start_quiz_listbox.yview)
 
     #method for the scrollbar at the saved quizzes screen
     def saved_quiz_scrollbar(self):
-        self.saved_quizzes_scrollbar = Scrollbar(self.saved_quizzes_frame, orient=VERTICAL, command=quiz_listbox.yview)
+        self.saved_quizzes_scrollbar = Scrollbar(self.saved_quizzes_frame, orient=VERTICAL, command=self.quiz_listbox.yview)
         self.saved_quizzes_scrollbar.pack(side=RIGHT, fill=Y)
     
     # method for the scrollbar at the start button screen
     def saved_quiz_listbox(self):
-        self.saved_quizzes_listbox = Listbox(saved_quizzes_frame, font=("Courier", 12)) 
+        self.saved_quizzes_listbox = Listbox(self.saved_quizzes_frame, font=("Courier", 12)) 
         self.saved_quizzes_listbox.pack(side=LEFT, fill=BOTH, expand=True, padx=20, pady=20)
     
     # method for combining the saved quizzes scrollbar and listbox
     def saved_quiz_config(self):
-        self.saved_quizzes_listbox.config(yscrollcommand=scrollbar.set)
-        self.saved_quizzes_scrollbar.config(command=quiz_listbox.yview)
+        self.saved_quizzes_listbox.config(yscrollcommand=self.scrollbar.set)
+        self.saved_quizzes_scrollbar.config(command=self.quiz_listbox.yview)
 
   
     
