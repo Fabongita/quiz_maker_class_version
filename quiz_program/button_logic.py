@@ -65,3 +65,6 @@ class ButtonLogic:
           contents = json.load(file)
           questions_to_play = [question for question in contents if question["Quiz name"] == self.quiz_name]
          self.ui.start(questions_to_play)  
+    # Method for the when the start is pressed that the start button is going to use
+    def start_button_logic(self):
+        
