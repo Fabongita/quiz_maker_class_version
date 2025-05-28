@@ -17,4 +17,5 @@ def launch_quiz_maker():
     """Call this to pop up the quiz‐maker GUI."""
     app = MainScreen()
     app.run()
-launch_quiz_maker()
+if __name__ == "__main__":
+    launch_quiz_maker()
