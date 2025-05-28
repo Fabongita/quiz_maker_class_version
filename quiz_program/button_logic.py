@@ -17,7 +17,7 @@ class ButtonLogic:
         self.current_index = 0
         self.score = 0
         
-        self.ui.show_questions()
+        self.show_question()
         
         self.ui.main_menu_button.pack_forget()    
         
@@ -34,7 +34,7 @@ class ButtonLogic:
             self.score += 1
         self.current_index += 1
         if self.current_index < len(self.current_questions):
-                self.ui.show_question()
+                self.show_question()
         else:
                 self.ui.quiz_questions.set(f"Quiz complete! You scored {self.score} out of {len(self.current_questions)}.")
                 for radiobutton in self.ui.radiobutton_widgets.values():
@@ -65,14 +65,14 @@ class ButtonLogic:
          self.quiz_name = self.ui.start_quiz_listbox.get(self.index)
          with open("questions_and_answers.json", "r", encoding= "utf-8" ) as file:
           contents = json.load(file)
-          questions_to_play = [question for question in contents if question["Quiz name"] == self.quiz_name]
-         self.start(questions_to_play)  
+         self.questions_to_play = [question for question in contents if question["Quiz name"] == self.quiz_name]
+         self.start(self.questions_to_play)  
     # Method for the when the start is pressed that the start button is going to use
     def start_button_logic(self):
         with open("questions_and_answers.json", "r", encoding= "utf-8" ) as file:
             json_file = json.load(file)
         self.all_names = [entry["Quiz name"] for entry in json_file]
-        self.unique_name = list(set(self.all_names))
+        self.unique_name = sorted(set(self.all_names))
         self.ui.start_quiz_listbox.delete(0, self.ui.END)
     
         for entry in self.unique_name:
@@ -86,10 +86,10 @@ class ButtonLogic:
          # Get the unique quiz names
          self.all_names = [entry["Quiz name"] for entry in json_file]
          self.unique_name = list(set(self.all_names))
-
+    
          # Populate the Listbox with quiz names
-         self.ui.quiz_listbox.delete(0, self.ui.END)
+         self.ui.saved_quizzes_listbox.delete(0, self.ui.END)
     
          for entry in self.unique_name:
-             self.ui.quiz_listbox.insert(self.ui.END, entry)
+             self.ui.saved_quizzes_listbox.insert(self.ui.END, entry)
          self.ui.saved_quizzes_frame.tkraise()
