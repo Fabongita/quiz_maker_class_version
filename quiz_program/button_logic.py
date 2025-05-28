@@ -45,4 +45,7 @@ class ButtonLogic:
         self.options = self.question_data["Options"]
         for letter, widget in self.ui.radiobutton_widgets.items():
             widget.config(text=f"{letter.upper()}: {self.options[letter]}")
-
+    
+    # method for creating a quiz when the button is pressed
+    def create_quiz(self):
+         ...
