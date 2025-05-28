@@ -3,7 +3,7 @@ from quiz_maker_program import launch_quiz_maker
 import json
 
 class ButtonLogic:
-    def __init__(self, current_questions = None, current_index = 0, score = 0, ui):
+    def __init__(self, ui, current_questions = None, current_index = 0, score = 0):
         if current_questions is None:
             current_questions = []
         self.ui = ui
@@ -43,7 +43,7 @@ class ButtonLogic:
                 self.ui.main_menu_button.pack()
     
     #method for showing the current question and current options
-    def show(self):     
+    def show_question(self):     
         self.question_data = self.current_questions[self.current_index]
         self.ui.quiz_questions.set(self.question_data["Questions"])
         self.ui.selected_answer.set("")
@@ -63,24 +63,24 @@ class ButtonLogic:
          else:
           self.index = self.selected[0] 
          self.quiz_name = self.ui.start_quiz_listbox.get(self.index)
-         with open("questions_and_answers.JSON", "r", encoding= "utf-8" ) as file:
+         with open("questions_and_answers.json", "r", encoding= "utf-8" ) as file:
           contents = json.load(file)
           questions_to_play = [question for question in contents if question["Quiz name"] == self.quiz_name]
-         self.ui.start(questions_to_play)  
+         self.start(questions_to_play)  
     # Method for the when the start is pressed that the start button is going to use
     def start_button_logic(self):
-        with open("questions_and_answers.JSON", "r", encoding= "utf-8" ) as file:
+        with open("questions_and_answers.json", "r", encoding= "utf-8" ) as file:
             json_file = json.load(file)
         self.all_names = [entry["Quiz name"] for entry in json_file]
         self.unique_name = list(set(self.all_names))
         self.ui.start_quiz_listbox.delete(0, self.ui.END)
     
-        for entry in self.ui.unique_name:
+        for entry in self.unique_name:
           self.ui.start_quiz_listbox.insert(self.ui.END, entry)
         self.ui.start_frame.tkraise()   
     # method for the saved quizzes the quiz saved quizzes button is going to use
     def saved_quizzes(self):
-         with open("questions_and_answers.JSON", "r", encoding= "utf-8" ) as file:
+         with open("questions_and_answers.json", "r", encoding= "utf-8" ) as file:
             json_file = json.load(file)
 
          # Get the unique quiz names
