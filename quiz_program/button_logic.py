@@ -1,6 +1,7 @@
 from quiz_screen import QuizScreen
 from quiz_maker_program import launch_quiz_maker
 import json
+from tkinter import *
 
 class ButtonLogic:
     def __init__(self, ui, current_questions = None, current_index = 0, score = 0):
@@ -73,10 +74,10 @@ class ButtonLogic:
             json_file = json.load(file)
         self.all_names = [entry["Quiz name"] for entry in json_file]
         self.unique_name = sorted(set(self.all_names))
-        self.ui.start_quiz_listbox.delete(0, self.ui.END)
+        self.ui.start_quiz_listbox.delete(0, END)
     
         for entry in self.unique_name:
-          self.ui.start_quiz_listbox.insert(self.ui.END, entry)
+          self.ui.start_quiz_listbox.insert(END, entry)
         self.ui.start_frame.tkraise()   
     # method for the saved quizzes the quiz saved quizzes button is going to use
     def saved_quizzes(self):
@@ -88,8 +89,8 @@ class ButtonLogic:
          self.unique_name = list(set(self.all_names))
     
          # Populate the Listbox with quiz names
-         self.ui.saved_quizzes_listbox.delete(0, self.ui.END)
+         self.ui.saved_quizzes_listbox.delete(0, END)
     
          for entry in self.unique_name:
-             self.ui.saved_quizzes_listbox.insert(self.ui.END, entry)
+             self.ui.saved_quizzes_listbox.insert(END, entry)
          self.ui.saved_quizzes_frame.tkraise()

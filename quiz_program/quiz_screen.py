@@ -26,12 +26,12 @@ class QuizScreen:
 
     # method for saved quizzes button
     def saved_quiz_button(self):
-        self.saved_quizzes_button = Button(self.button_frame, text="Saved Quizzes", height="7", width="20",  activebackground="blue", activeforeground="yellow", command=saved_quizzes )
+        self.saved_quizzes_button = Button(self.button_frame, text="Saved Quizzes", height="7", width="20",  activebackground="blue", activeforeground="yellow" )
         self.saved_quizzes_button.pack(padx="10", pady="70", side="left")                
 
     # method for start button
     def starter_button(self):
-        self.start_button = Button(self.button_frame, text="Start game", height="7", width="20",  activebackground="blue", activeforeground="yellow", command=start_button_logic )
+        self.start_button = Button(self.button_frame, text="Start game", height="7", width="20",  activebackground="blue", activeforeground="yellow")
         self.start_button.pack(padx="10", pady="70", side="left") 
 
     # method for main menu button
@@ -41,12 +41,12 @@ class QuizScreen:
 
     # method for create quiz button
     def create_quiz_button(self):
-        self.quiz_creator_button = Button(self.button_frame, text="Create Quiz", height="7", width="20",  activebackground="blue", activeforeground="yellow", command=quiz_maker )
+        self.quiz_creator_button = Button(self.button_frame, text="Create Quiz", height="7", width="20",  activebackground="blue", activeforeground="yellow")
         self.quiz_creator_button.pack(padx="10", pady="70", side="left") 
 
     # method for submit button
     def submitter_button(self):
-        self.submit_button = Button(self.play_frame, text="Submit", command=submit)
+        self.submit_button = Button(self.play_frame, text="Submit")
         self.submit_button.pack(pady=10)
 
     # method for back button
@@ -56,7 +56,7 @@ class QuizScreen:
     
     #method for the selection button
     def selection_button(self):
-        self.select_button = Button(self.start_frame, text="Print Selected", command=self.load_button)
+        self.select_button = Button(self.start_frame, text="Print Selected")
         self.select_button.pack()
 
     # method for radio buttons
@@ -84,7 +84,7 @@ class QuizScreen:
 
     # method for combining the start scrollbar and listbox
     def start_config(self):
-        self.start_quiz_listbox.config(yscrollcommand=self.start_scrollbar.set)
+        self.start_quiz_listbox.config(yscrollcommand=self.start_quiz_scrollbar.set)
         self.start_quiz_scrollbar.config(command=self.start_quiz_listbox.yview)
 
     #method for the scrollbar at the saved quizzes screen
