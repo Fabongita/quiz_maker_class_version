@@ -1,4 +1,8 @@
 from tkinter import Toplevel, Tk
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from quiz_maker_program.quiz_input_screen import QuizInputScreen
 from quiz_maker_program.saved_quizzes_manager import SavedQuizzesManager
 
