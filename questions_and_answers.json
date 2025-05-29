@@ -1,1 +1,57 @@
-[]
+[
+  {
+    "Quiz name": "Science quiz",
+    "Questions": "Force = ?",
+    "Options": {
+      "a": "4",
+      "b": "mass x acceleration",
+      "c": "2",
+      "d": "3"
+    },
+    "correct answer": "b"
+  },
+  {
+    "Quiz name": "Science quiz",
+    "Questions": "mass = ?",
+    "Options": {
+      "a": "Force / Acceleration",
+      "b": "yes",
+      "c": "1",
+      "d": "2"
+    },
+    "correct answer": "a"
+  },
+  {
+    "Quiz name": "Science quiz",
+    "Questions": "mass = ?",
+    "Options": {
+      "a": "palindrome",
+      "b": "c^2 = a^2 + b^2",
+      "c": "quadratic equation",
+      "d": "Force / Acceleration"
+    },
+    "correct answer": "d"
+  },
+  {
+    "Quiz name": "Math quiz",
+    "Questions": "derivative of 2x = ?",
+    "Options": {
+      "a": "oi oi oi",
+      "b": "3",
+      "c": "what haffen vella",
+      "d": "2"
+    },
+    "correct answer": "d"
+  },
+  {
+    "Quiz name": "Math quiz",
+    "Questions": "d/dx sinx = ?",
+    "Options": {
+      "a": "cscx",
+      "b": "cotx",
+      "c": "cosx",
+      "d": "tangentx"
+    },
+    "correct answer": "c"
+  }
+]
