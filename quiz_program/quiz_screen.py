@@ -120,5 +120,12 @@ ________        .__           ________
 """
         self.introduction_label=Label(self.intro_frame, text=ascii_art, font=("Courier", 12), justify="left")
         self.introduction_label.pack(side="top", padx=20, pady=20)
+    
+    # method for combining the widgets in the introduction screen
+    def build_intro_screen(self):
+        self.intro_label()          # ASCII art label
+        self.create_quiz_button()   # Button to create quiz
+        self.starter_button()       # Button to start quiz
+        self.saved_quiz_button()    # Button to view saved quizzes
 
-                
+                    
