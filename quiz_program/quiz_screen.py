@@ -37,7 +37,7 @@ class QuizScreen:
     # method for main menu button
     def menu_button(self):
         self.main_menu_button = Button(self.play_frame, text="Main menu", command=lambda: self.intro_frame.tkraise())
-        self.main_menu_button.pack(padx="20", pady="20")
+        self.main_menu_button.pack(padx="20", pady=(10, 5), side="bottom")
 
     # method for create quiz button
     def create_quiz_button(self):
@@ -47,7 +47,7 @@ class QuizScreen:
     # method for submit button
     def submitter_button(self):
         self.submit_button = Button(self.play_frame, text="Submit")
-        self.submit_button.pack(pady=10)
+        self.submit_button.pack(pady=(10, 30))
 
     # method for back button
     def back_button(self):
@@ -61,15 +61,15 @@ class QuizScreen:
 
     # method for radio buttons
     def radio_buttons(self):
+        self.options_frame = Frame(self.play_frame)
+        self.options_frame.pack(padx=20, pady=10, anchor="w")
         self.radiobutton_widgets = {}
         self.selected_answer = StringVar(value="")
-        self.options_frame = Frame(self.play_frame)
-        self.options_frame.pack(anchor="w", padx=20, pady=10)
         for option_letter in ("a", "b", "c", "d"):
            self.radio_button = Radiobutton(self.options_frame, text=f"\u2022 {option_letter.upper()}",
             variable=self.selected_answer, value=option_letter, indicatoron=True, font=("Courier", 14),
-            anchor="w", padx=10)
-           self.radio_button.pack(fill="x", pady="2")
+            anchor="w", padx=10, justify="left")
+           self.radio_button.pack(fill="x", pady="2", anchor="w")
            self.radiobutton_widgets[option_letter] = self.radio_button
         
     # method for listbox when you press start
