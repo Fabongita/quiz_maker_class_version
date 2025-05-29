@@ -27,10 +27,8 @@ def main():
     ui.saved_quiz_scrollbar()
     ui.saved_quiz_config()
     ui.question_label()
+    ui.build_intro_screen()
 
-    ui.starter_button()
-    ui.saved_quiz_button()
-    ui.create_quiz_button()
     ui.menu_button()
     ui.submitter_button()
     ui.back_button()
