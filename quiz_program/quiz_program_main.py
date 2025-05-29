@@ -19,18 +19,15 @@ def main():
     ui.frame(root)
 
     # build GUI widgets
-    ui.radio_buttons()
     ui.start_listbox()
     ui.start_scrollbar()
     ui.start_config()
     ui.saved_quiz_listbox()
     ui.saved_quiz_scrollbar()
     ui.saved_quiz_config()
-    ui.question_label()
     ui.build_intro_screen()
-
-    ui.menu_button()
-    ui.submitter_button()
+    ui.build_play_screen()
+    
     ui.back_button()
     ui.selection_button()
 

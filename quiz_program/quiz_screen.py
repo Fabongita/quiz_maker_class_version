@@ -104,8 +104,8 @@ class QuizScreen:
     
     #method for the label that displays the question
     def question_label(self):
-     self.question_label_widget = Label(self.play_frame, textvariable=self.quiz_questions, font=("Courier", 16), wraplength=500, justify="left")
-     self.question_label_widget.pack(pady=(20, 10), anchor= "w")
+     self.question_label_widget = Label(self.play_frame, textvariable=self.quiz_questions, font=("Courier", 16), wraplength=700, justify="center")
+     self.question_label_widget.pack(pady=(100, 20), anchor= "center")
 
     #method for intro label
     def intro_label(self):
@@ -129,4 +129,8 @@ ________        .__           ________
         self.saved_quiz_button()    # Button to view saved quizzes
 
     # another method for combining the question label, radio buttons, and submit button in order
-                    
+    def build_play_screen(self):
+        self.question_label()           # Show question label first
+        self.radio_buttons()            # Then the options
+        self.submitter_button()         # Then the submit button
+        self.menu_button()              # menu button
