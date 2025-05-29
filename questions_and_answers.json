@@ -1,1 +1,57 @@
-[]
+[
+  {
+    "Quiz name": "math quiz",
+    "Questions": "1+1 =?",
+    "Options": {
+      "a": "4",
+      "b": "1",
+      "c": "2",
+      "d": "3"
+    },
+    "correct answer": "c"
+  },
+  {
+    "Quiz name": "math quiz",
+    "Questions": "Are circles round?",
+    "Options": {
+      "a": "what are you saying?",
+      "b": "I'm sleepy",
+      "c": "yes",
+      "d": "no"
+    },
+    "correct answer": "c"
+  },
+  {
+    "Quiz name": "science quiz",
+    "Questions": "is earth hotter than the sun?",
+    "Options": {
+      "a": "yes smarty ",
+      "b": "no doofus",
+      "c": "yo",
+      "d": "gurt"
+    },
+    "correct answer": "b"
+  },
+  {
+    "Quiz name": "science quiz",
+    "Questions": "is mount everest a mountain?",
+    "Options": {
+      "a": "yes bro",
+      "b": "no, it's a plateau",
+      "c": "no",
+      "d": "no, I think it's a lake"
+    },
+    "correct answer": "a"
+  },
+  {
+    "Quiz name": "Will this main program work",
+    "Questions": "will this main program work?",
+    "Options": {
+      "a": "yes",
+      "b": "abs",
+      "c": "who knows",
+      "d": "no"
+    },
+    "correct answer": "c"
+  }
+]
