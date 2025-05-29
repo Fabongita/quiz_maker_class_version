@@ -109,5 +109,16 @@ class QuizScreen:
 
     #method for intro label
     def intro_label(self):
-        ...
-    
+        ascii_art = """
+________        .__           ________                       
+\_____  \  __ __|__|_______  /  _____/_____    _____   ____  
+ /  / \  \|  |  \  \___   / /   \  ___\__  \  /     \_/ __ \ 
+/   \_/.  \  |  /  |/    /  \    \_\  \/ __ \|  Y Y  \  ___/ 
+\_____\ \_/____/|__/_____ \  \______  (____  /__|_|  /\___  >
+       \__>              \/         \/     \/      \/     \/ 
+
+"""
+        self.introduction_label=Label(self.intro_frame, text=ascii_art, font=("Courier", 12), justify="left")
+        self.introduction_label.pack(side="top", padx=20, pady=20)
+
+                
