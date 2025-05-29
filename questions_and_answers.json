@@ -20,5 +20,16 @@
       "d": "3"
     },
     "correct answer": "c"
+  },
+  {
+    "Quiz name": "science quiz",
+    "Questions": "is the earth round?",
+    "Options": {
+      "a": "yes",
+      "b": "yes",
+      "c": "yes",
+      "d": "no "
+    },
+    "correct answer": "d"
   }
 ]
