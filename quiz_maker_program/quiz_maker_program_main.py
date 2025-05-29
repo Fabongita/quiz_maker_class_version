@@ -1,3 +1,4 @@
+
 from tkinter import Toplevel, Tk
 import sys
 import os
@@ -6,7 +7,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from quiz_maker_program.quiz_input_screen import QuizInputScreen
 from quiz_maker_program.saved_quizzes_manager import SavedQuizzesManager
 
-class QuizMakerProgramMain:
+class MainScreen:
     def __init__(self, parent):
         self.parent = parent
         self.root = Toplevel(parent)
@@ -19,13 +20,17 @@ class QuizMakerProgramMain:
         screen.widgets(self.root)
 
     def run(self):
-        self.root.wait_window() # This will wait until a widget is destroyed
+        # wait until the Toplevel is destroyed
+        self.root.wait_window()
 
 def launch_quiz_maker(parent):
     """Call this to pop up the quiz‐maker GUI."""
-    app = QuizMakerProgramMain(parent)
+    app = MainScreen(parent)
     app.run()
 
 if __name__ == "__main__":
     root = Tk()
-    launch_quiz_maker(root)
+    root.after(0, lambda: launch_quiz_maker(root))
+    root.mainloop()
+
+
