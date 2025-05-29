@@ -6,7 +6,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from quiz_maker_program.quiz_input_screen import QuizInputScreen
 from quiz_maker_program.saved_quizzes_manager import SavedQuizzesManager
 
-class MainScreen:
+class QuizMakerProgramMain:
     def __init__(self, parent):
         self.parent = parent
         self.root = Toplevel(parent)
@@ -23,10 +23,9 @@ class MainScreen:
 
 def launch_quiz_maker(parent):
     """Call this to pop up the quiz‐maker GUI."""
-    app = MainScreen(parent)
+    app = QuizMakerProgramMain(parent)
     app.run()
 
 if __name__ == "__main__":
     root = Tk()
-    root.withdraw()
     launch_quiz_maker(root)
