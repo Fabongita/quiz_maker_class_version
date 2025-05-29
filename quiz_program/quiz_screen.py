@@ -107,4 +107,7 @@ class QuizScreen:
      self.question_label_widget = Label(self.play_frame, textvariable=self.quiz_questions, font=("Courier", 16), wraplength=500, justify="left")
      self.question_label_widget.pack(pady=20)
 
+    #method for intro label
+    def intro_label(self):
+        ...
     
